@@ -7,5 +7,39 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  // ISR/data cache (see open-next.config.ts). Create the bucket once with:
+  //   npx wrangler r2 bucket create thiagoc-dev-inc-cache
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "thiagoc-dev-inc-cache"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NEXT_CACHE_DO_QUEUE",
+        "class_name": "DOQueueHandler"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DOQueueHandler"]
+    }
+  ],
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "thiagoc-dev"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "thiagoc.dev",
+      "custom_domain": true
+    }
+  ]
 }

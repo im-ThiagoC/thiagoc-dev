@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
     // otherwise makes Next.js infer the wrong root.
     root: process.cwd(),
   },
+  images: {
+    // Cloudflare Image Transformations replace the default optimizer,
+    // which is unavailable on Workers.
+    loader: "custom",
+    loaderFile: "./image-loader.ts",
+  },
 };
 
 export default withNextIntl(nextConfig);
