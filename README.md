@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# thiagoc.dev
 
-## Getting Started
+Personal portfolio — built with Next.js 16, TypeScript and shadcn/ui, deployed to **Cloudflare Workers** via [OpenNext](https://opennext.js.org/cloudflare).
 
-First, run the development server:
+**Live:** [thiagoc.dev](https://thiagoc.dev)
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com) + [shadcn/ui](https://ui.shadcn.com) (base-nova / Base UI)
+- [next-intl](https://next-intl.dev) — bilingual PT-BR/EN with locale-prefixed routes
+- [Motion](https://motion.dev) — scroll reveals honoring `prefers-reduced-motion`
+- [@opennextjs/cloudflare](https://opennext.js.org/cloudflare) — SSR/ISR on Cloudflare Workers
+
+## Architecture highlights
+
+- **ISR on Workers**: data-cache entries persist in an R2 bucket with a
+  Durable Object queue serializing revalidations (`open-next.config.ts`).
+- **Live GitHub stats**: stars/language/last-push fetched server-side with
+  `revalidate: 3600` and a graceful fallback when rate-limited (`src/lib/github.ts`).
+- **Dynamic OG images**: per-project `ImageResponse` cards with CDN-loaded
+  Geist and built-in font fallback (`src/lib/og.tsx`).
+- **SEO**: hreflang alternates on every page, localized sitemap, JSON-LD
+  (`Person`, `SoftwareSourceCode`) typed with `schema-dts`.
+- **Single source of truth**: `src/data/projects.ts` drives pages, OG images,
+  sitemap and GitHub fetches; missing translations fail the build.
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # Next.js dev server (Turbopack)
+pnpm preview    # production build served by workerd (Workers runtime)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Optional: put `GITHUB_TOKEN=...` in `.dev.vars` to raise the GitHub API
+rate limit (site works without it — stats just disappear when limited).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy (Cloudflare)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+One-time setup:
 
-## Learn More
+```bash
+npx wrangler login
+npx wrangler r2 bucket create thiagoc-dev-inc-cache
+npx wrangler secret put GITHUB_TOKEN   # optional
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm deploy
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The `routes` entry in `wrangler.jsonc` (`custom_domain: true`) provisions
+DNS + certificate for `thiagoc.dev` automatically on the Cloudflare zone.
 
-## Deploy on Vercel
+## Windows notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Two deliberate deviations that keep the OpenNext build working on Windows:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `pnpm-workspace.yaml` sets `nodeLinker: hoisted` — pnpm's symlinked
+  layout breaks esbuild file tracing during the OpenNext build.
+- `pnpm build` uses `next build --webpack` — Turbopack's bracket-named
+  chunks (`[root-of-the-server]__*.js`) fail to resolve in the bundled
+  Worker on Windows.
+- `src/middleware.ts` (not `proxy.ts`) — OpenNext does not support Node.js
+  middleware yet ([#962](https://github.com/opennextjs/opennextjs-cloudflare/issues/962)).
