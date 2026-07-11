@@ -1,0 +1,9 @@
+# Flat node_modules layout: avoids pnpm symlinks/junctions that break
+# esbuild's file tracing on Windows during the OpenNext Cloudflare build.
+nodeLinker: hoisted
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
