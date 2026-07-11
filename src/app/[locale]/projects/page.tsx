@@ -5,7 +5,9 @@ import { FadeIn } from "@/components/motion/reveal";
 import { CategoryFilter } from "@/components/projects/category-filter";
 import { ProjectCard } from "@/components/projects/project-card";
 import { projects, type ProjectCategory } from "@/data/projects";
+import { routing, type Locale } from "@/i18n/routing";
 import { getAllRepoStats } from "@/lib/github";
+import { localeAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -13,8 +15,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "projects" });
-  return { title: t("title"), description: t("subtitle") };
+  const typedLocale = (routing.locales as readonly string[]).includes(locale)
+    ? (locale as Locale)
+    : routing.defaultLocale;
+  const t = await getTranslations({ locale: typedLocale, namespace: "projects" });
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: localeAlternates("/projects", typedLocale),
+  };
 }
 
 const CATEGORIES: ProjectCategory[] = ["web", "systems"];

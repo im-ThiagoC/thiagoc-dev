@@ -8,6 +8,8 @@ import { Providers } from "@/components/layout/providers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { routing } from "@/i18n/routing";
+import { localeAlternates } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 import "../globals.css";
 
@@ -31,14 +33,32 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
+  const typedLocale = hasLocale(routing.locales, locale)
+    ? locale
+    : routing.defaultLocale;
+  const t = await getTranslations({ locale: typedLocale, namespace: "meta" });
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title: {
       default: t("title"),
       template: "%s — Thiago Carvalho",
     },
     description: t("description"),
+    alternates: localeAlternates("/", typedLocale),
+    openGraph: {
+      type: "website",
+      siteName: "thiagoc.dev",
+      title: t("title"),
+      description: t("description"),
+      url: `${siteConfig.url}/${typedLocale}`,
+      locale: typedLocale === "pt" ? "pt_BR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+    },
   };
 }
 

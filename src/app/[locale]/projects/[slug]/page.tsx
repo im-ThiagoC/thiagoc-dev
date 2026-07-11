@@ -18,6 +18,7 @@ import { getAdjacentProjects, getProject, projects } from "@/data/projects";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { getRepoStats } from "@/lib/github";
+import { JsonLd, localeAlternates, projectJsonLd } from "@/lib/seo";
 
 interface ProjectPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -43,6 +44,7 @@ export async function generateMetadata({
   return {
     title: project.name,
     description: project.tagline[typedLocale],
+    alternates: localeAlternates(`/projects/${project.slug}`, typedLocale),
   };
 }
 
@@ -60,6 +62,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6">
+      <JsonLd data={projectJsonLd(project, typedLocale)} />
       <FadeIn>
         <Link
           href="/projects"

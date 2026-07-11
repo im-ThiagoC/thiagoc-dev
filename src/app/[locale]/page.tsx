@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { Skills } from "@/components/sections/skills";
 import { featuredProjects } from "@/data/projects";
 import { getAllRepoStats } from "@/lib/github";
+import { JsonLd, personJsonLd } from "@/lib/seo";
 
 export default async function HomePage({
   params,
@@ -20,6 +21,7 @@ export default async function HomePage({
 
   return (
     <>
+      <JsonLd data={personJsonLd()} />
       <Hero />
       <FeaturedProjects stats={stats} />
       <Skills />
