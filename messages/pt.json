@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Thiago Carvalho — Desenvolvedor Full-Stack",
-    "description": "Desenvolvedor full-stack e bacharel em Ciência da Computação na UFRRJ. Construo aplicações web modernas com Next.js, TypeScript e React."
+    "title": "Thiago Carvalho — Sistemas Embarcados & Full-Stack",
+    "description": "Desenvolvedor de sistemas embarcados e full-stack, bacharel em Ciência da Computação pela UFRRJ. Trabalho com firmware em C/C++ na Digicare Biomedical e construo aplicações web com Next.js e TypeScript."
   },
   "nav": {
     "home": "Início",
@@ -24,9 +24,10 @@
   "hero": {
     "greeting": "Olá, eu sou",
     "name": "Thiago Carvalho",
-    "role": "Desenvolvedor Full-Stack",
+    "role": "Sistemas Embarcados & Full-Stack",
     "location": "Rio de Janeiro, Brasil",
-    "tagline": "Construo aplicações web modernas com Next.js, TypeScript e React — do banco de dados à interface.",
+    "currently": "Sistemas embarcados na Digicare Biomedical",
+    "tagline": "Do firmware em C/C++ à interface web: desenvolvo sistemas embarcados e aplicações full-stack modernas.",
     "viewProjects": "Ver projetos",
     "githubProfile": "Perfil no GitHub"
   },
@@ -43,13 +44,13 @@
     "subtitle": "Tecnologias com que trabalho no dia a dia",
     "frontend": "Frontend",
     "backend": "Backend",
-    "systems": "Sistemas",
+    "systems": "Embarcados & Sistemas",
     "tools": "Ferramentas"
   },
   "about": {
     "title": "Sobre mim",
-    "paragraph1": "Sou estudante de Ciência da Computação na UFRRJ e desenvolvedor full-stack apaixonado por construir produtos web completos — da modelagem do banco de dados aos detalhes da interface.",
-    "paragraph2": "Além do ecossistema JavaScript, tenho forte interesse em programação de sistemas: escrevo C, estudo computação de alto desempenho e gosto de otimizar algoritmos até o limite.",
+    "paragraph1": "Sou bacharel em Ciência da Computação pela UFRRJ (2025) e trabalho com sistemas embarcados na Digicare Biomedical, desenvolvendo firmware em C/C++ para dispositivos biomédicos.",
+    "paragraph2": "Também sou desenvolvedor full-stack: construo aplicações web modernas com Next.js e TypeScript. Programação de baixo nível e desenvolvimento web são os dois lados do que gosto de fazer — do bare-metal à interface.",
     "paragraph3": "Coffee == Code."
   },
   "contact": {

@@ -17,10 +17,6 @@
 		{
 			"binding": "NEXT_INC_CACHE_R2_BUCKET",
 			"bucket_name": "thiagoc-dev-inc-cache"
-		},
-		{
-			"bucket_name": "thiagoc-dev-inc-cache",
-			"binding": "thiagoc_dev_inc_cache"
 		}
 	],
 	"durable_objects": {

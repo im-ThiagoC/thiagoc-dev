@@ -17,6 +17,6 @@ export default async function OpenGraphImage({
   return ogImage({
     title: t("name"),
     subtitle: t("tagline"),
-    badges: ["Next.js", "TypeScript", "React", "Node.js", "C"],
+    badges: ["Embedded Systems", "C / C++", "Next.js", "TypeScript", "React"],
   });
 }

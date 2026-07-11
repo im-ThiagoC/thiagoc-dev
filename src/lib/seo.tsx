@@ -31,10 +31,14 @@ export function personJsonLd(): WithContext<Person> {
     name: siteConfig.name,
     url: siteConfig.url,
     email: siteConfig.email,
-    jobTitle: "Full-Stack Developer",
-    affiliation: {
+    jobTitle: siteConfig.jobTitle,
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.company,
+    },
+    alumniOf: {
       "@type": "CollegeOrUniversity",
-      name: siteConfig.affiliation,
+      name: siteConfig.alumniOf,
     },
     address: {
       "@type": "PostalAddress",

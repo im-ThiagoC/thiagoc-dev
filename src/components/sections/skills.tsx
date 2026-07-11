@@ -22,7 +22,14 @@ const skillGroups = [
   },
   {
     key: "systems",
-    skills: ["C", "Algorithms", "OpenMP", "High-Performance Computing"],
+    skills: [
+      "C",
+      "C++",
+      "Embedded Systems",
+      "Firmware",
+      "Algorithms",
+      "High-Performance Computing",
+    ],
   },
   {
     key: "tools",

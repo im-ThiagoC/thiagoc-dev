@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Thiago Carvalho — Full-Stack Developer",
-    "description": "Full-stack developer and bachelor of Computer Science at UFRRJ. I build modern web applications with Next.js, TypeScript and React."
+    "title": "Thiago Carvalho — Embedded Systems & Full-Stack",
+    "description": "Embedded systems and full-stack developer, bachelor of Computer Science from UFRRJ. I build C/C++ firmware at Digicare Biomedical and modern web applications with Next.js and TypeScript."
   },
   "nav": {
     "home": "Home",
@@ -24,9 +24,10 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Thiago Carvalho",
-    "role": "Full-Stack Developer",
+    "role": "Embedded Systems & Full-Stack",
     "location": "Rio de Janeiro, Brazil",
-    "tagline": "I build modern web applications with Next.js, TypeScript and React — from the database to the interface.",
+    "currently": "Embedded systems at Digicare Biomedical",
+    "tagline": "From C/C++ firmware to the web interface: I build embedded systems and modern full-stack applications.",
     "viewProjects": "View projects",
     "githubProfile": "GitHub profile"
   },
@@ -43,13 +44,13 @@
     "subtitle": "Technologies I work with every day",
     "frontend": "Frontend",
     "backend": "Backend",
-    "systems": "Systems",
+    "systems": "Embedded & Systems",
     "tools": "Tools"
   },
   "about": {
     "title": "About me",
-    "paragraph1": "I'm a Computer Science student at UFRRJ and a full-stack developer passionate about building complete web products — from database modeling to interface details.",
-    "paragraph2": "Beyond the JavaScript ecosystem, I have a strong interest in systems programming: I write C, study high-performance computing and enjoy optimizing algorithms to the limit.",
+    "paragraph1": "I hold a bachelor's in Computer Science from UFRRJ (2025) and work with embedded systems at Digicare Biomedical, developing C/C++ firmware for biomedical devices.",
+    "paragraph2": "I'm also a full-stack developer: I build modern web applications with Next.js and TypeScript. Low-level programming and web development are the two sides of what I love doing — from bare-metal to the interface.",
     "paragraph3": "Coffee == Code."
   },
   "contact": {

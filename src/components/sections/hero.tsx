@@ -1,4 +1,4 @@
-import { ArrowRightIcon, MapPinIcon } from "lucide-react";
+import { ArrowRightIcon, BriefcaseIcon, MapPinIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { GitHubIcon } from "@/components/icons";
@@ -27,10 +27,16 @@ export async function Hero() {
         <p className="mt-6 max-w-xl text-lg text-pretty text-muted-foreground">
           {t("tagline")}
         </p>
-        <p className="mt-3 inline-flex items-center gap-1.5 font-mono text-sm text-muted-foreground">
-          <MapPinIcon className="size-3.5" aria-hidden />
-          {t("location")}
-        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <BriefcaseIcon className="size-3.5" aria-hidden />
+            {t("currently")}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <MapPinIcon className="size-3.5" aria-hidden />
+            {t("location")}
+          </span>
+        </div>
       </FadeIn>
       <FadeIn delay={0.15} className="mt-8 flex flex-wrap items-center gap-3">
         <Button
