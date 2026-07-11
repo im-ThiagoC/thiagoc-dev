@@ -1,6 +1,12 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
-import { FadeIn } from "@/components/motion/reveal";
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { FeaturedProjects } from "@/components/sections/featured-projects";
+import { Hero } from "@/components/sections/hero";
+import { Skills } from "@/components/sections/skills";
+import { featuredProjects } from "@/data/projects";
+import { getAllRepoStats } from "@/lib/github";
 
 export default async function HomePage({
   params,
@@ -9,21 +15,16 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("hero");
+
+  const stats = await getAllRepoStats(featuredProjects.map((p) => p.repo));
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-4 py-24 sm:px-6">
-      <FadeIn>
-        <p className="font-mono text-sm text-muted-foreground">
-          {t("greeting")}
-        </p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-          {t("name")}
-        </h1>
-        <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-          {t("tagline")}
-        </p>
-      </FadeIn>
-    </section>
+    <>
+      <Hero />
+      <FeaturedProjects stats={stats} />
+      <Skills />
+      <About />
+      <Contact />
+    </>
   );
 }
