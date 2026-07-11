@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Thiago Carvalho — Full-Stack Developer",
+    "description": "Full-stack developer and Computer Science student at UFRRJ. I build modern web applications with Next.js, TypeScript and React."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "openMenu": "Open menu"
+  },
+  "themeToggle": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "localeSwitcher": {
+    "label": "Change language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Thiago Carvalho",
+    "role": "Full-Stack Developer",
+    "location": "Rio de Janeiro, Brazil",
+    "tagline": "I build modern web applications with Next.js, TypeScript and React — from the database to the interface.",
+    "viewProjects": "View projects",
+    "githubProfile": "GitHub profile"
+  },
+  "featured": {
+    "title": "Featured projects",
+    "subtitle": "A selection of what I've been building",
+    "viewAll": "View all projects",
+    "viewProject": "View project",
+    "liveDemo": "Live demo",
+    "sourceCode": "Source code"
+  },
+  "skills": {
+    "title": "Stack & skills",
+    "subtitle": "Technologies I work with every day",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "systems": "Systems",
+    "tools": "Tools"
+  },
+  "about": {
+    "title": "About me",
+    "paragraph1": "I'm a Computer Science student at UFRRJ and a full-stack developer passionate about building complete web products — from database modeling to interface details.",
+    "paragraph2": "Beyond the JavaScript ecosystem, I have a strong interest in systems programming: I write C, study high-performance computing and enjoy optimizing algorithms to the limit.",
+    "paragraph3": "Coffee == Code."
+  },
+  "contact": {
+    "title": "Let's talk",
+    "subtitle": "I'm open to opportunities and collaborations",
+    "email": "Send email"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js 16 on Cloudflare Workers",
+    "viewSource": "View source",
+    "rights": "All rights reserved"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Everything I've been building — from full-stack web applications to systems programming in C",
+    "all": "All",
+    "web": "Web",
+    "systems": "Systems",
+    "stars": "stars",
+    "updated": "Updated {date}",
+    "empty": "No projects in this category"
+  },
+  "project": {
+    "caseStudy": "Case study",
+    "problem": "Problem",
+    "approach": "Approach",
+    "outcome": "Outcome",
+    "stack": "Stack",
+    "year": "Year",
+    "liveDemo": "Live demo",
+    "sourceCode": "Source code",
+    "previousProject": "Previous project",
+    "nextProject": "Next project",
+    "backToProjects": "Back to projects"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  }
+}

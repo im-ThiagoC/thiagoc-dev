@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Thiago Carvalho — Desenvolvedor Full-Stack",
+    "description": "Desenvolvedor full-stack e estudante de Ciência da Computação na UFRRJ. Construo aplicações web modernas com Next.js, TypeScript e React."
+  },
+  "nav": {
+    "home": "Início",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "openMenu": "Abrir menu"
+  },
+  "themeToggle": {
+    "toggle": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "localeSwitcher": {
+    "label": "Mudar idioma",
+    "pt": "Português",
+    "en": "English"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Thiago Carvalho",
+    "role": "Desenvolvedor Full-Stack",
+    "location": "Rio de Janeiro, Brasil",
+    "tagline": "Construo aplicações web modernas com Next.js, TypeScript e React — do banco de dados à interface.",
+    "viewProjects": "Ver projetos",
+    "githubProfile": "Perfil no GitHub"
+  },
+  "featured": {
+    "title": "Projetos em destaque",
+    "subtitle": "Uma seleção do que venho construindo",
+    "viewAll": "Ver todos os projetos",
+    "viewProject": "Ver projeto",
+    "liveDemo": "Demo ao vivo",
+    "sourceCode": "Código-fonte"
+  },
+  "skills": {
+    "title": "Stack & habilidades",
+    "subtitle": "Tecnologias com que trabalho no dia a dia",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "systems": "Sistemas",
+    "tools": "Ferramentas"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "paragraph1": "Sou estudante de Ciência da Computação na UFRRJ e desenvolvedor full-stack apaixonado por construir produtos web completos — da modelagem do banco de dados aos detalhes da interface.",
+    "paragraph2": "Além do ecossistema JavaScript, tenho forte interesse em programação de sistemas: escrevo C, estudo computação de alto desempenho e gosto de otimizar algoritmos até o limite.",
+    "paragraph3": "Coffee == Code."
+  },
+  "contact": {
+    "title": "Vamos conversar",
+    "subtitle": "Estou aberto a oportunidades e colaborações",
+    "email": "Enviar e-mail"
+  },
+  "footer": {
+    "builtWith": "Feito com Next.js 16 na Cloudflare Workers",
+    "viewSource": "Ver código-fonte",
+    "rights": "Todos os direitos reservados"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Tudo que venho construindo — de aplicações web full-stack a programação de sistemas em C",
+    "all": "Todos",
+    "web": "Web",
+    "systems": "Sistemas",
+    "stars": "estrelas",
+    "updated": "Atualizado em {date}",
+    "empty": "Nenhum projeto nesta categoria"
+  },
+  "project": {
+    "caseStudy": "Estudo de caso",
+    "problem": "Problema",
+    "approach": "Abordagem",
+    "outcome": "Resultado",
+    "stack": "Stack",
+    "year": "Ano",
+    "liveDemo": "Demo ao vivo",
+    "sourceCode": "Código-fonte",
+    "previousProject": "Projeto anterior",
+    "nextProject": "Próximo projeto",
+    "backToProjects": "Voltar aos projetos"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "back": "Voltar ao início"
+  }
+}
